@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>BootStrap Table使用</title>
+    <!--@*1、Jquery组件引用*@-->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<!-- 例应该很好看懂Table options和Column options 所放的位置不同，随便写的，主要为了懂得如何用 -->
+ 
+ <table id="realTime_Table" data-click-to-select="true" class="table table-bordered" data-page-size="20">
+      <thead>
+          <tr >
+              <th data-sortable="true" data-field="realTimeDate">日期</th>
+              <th data-sortable="true" data-field="newPlayerNum">新增用户</th>
+              <th data-sortable="true" data-field="activePlayerNum">活跃用户</th>
+          </tr>
+      </thead>
+      <tbody>
+      </tbody>
+</table>
+
+<script type="text/javascript">
+            //表格的展开和收缩实现代码
+            $(function(){
+    $("tr.parent").click(function(){
+        $(this)
+        .toggleClass("selected")
+        .siblings('.child_'+this.id).toggle();
+    }).click();
+});
+</script>
+
+</body>
+</html>
